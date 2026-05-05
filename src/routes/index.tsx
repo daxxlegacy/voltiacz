@@ -77,7 +77,7 @@ function Index() {
           <h2 className="font-display text-3xl md:text-5xl font-black mb-3">
             Featured <span className="text-gradient">Drops</span>
           </h2>
-          <p className="text-muted-foreground">The latest from BunnyZ — straight from YouTube.</p>
+          <p className="text-muted-foreground">The latest from BunnyZ & xChurros — straight from YouTube.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FEATURED.map((v) => (
