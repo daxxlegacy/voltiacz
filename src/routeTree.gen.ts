@@ -13,6 +13,7 @@ import { Route as ContentRouteImport } from './routes/content'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ClipsRouteImport } from './routes/clips'
+import { Route as AnthemRouteImport } from './routes/anthem'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -36,6 +37,11 @@ const ClipsRoute = ClipsRouteImport.update({
   path: '/clips',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnthemRoute = AnthemRouteImport.update({
+  id: '/anthem',
+  path: '/anthem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -50,6 +56,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anthem': typeof AnthemRoute
   '/clips': typeof ClipsRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anthem': typeof AnthemRoute
   '/clips': typeof ClipsRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/anthem': typeof AnthemRoute
   '/clips': typeof ClipsRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -74,13 +83,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/clips' | '/community' | '/contact' | '/content'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/anthem'
+    | '/clips'
+    | '/community'
+    | '/contact'
+    | '/content'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/clips' | '/community' | '/contact' | '/content'
+  to:
+    | '/'
+    | '/about'
+    | '/anthem'
+    | '/clips'
+    | '/community'
+    | '/contact'
+    | '/content'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/anthem'
     | '/clips'
     | '/community'
     | '/contact'
@@ -90,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AnthemRoute: typeof AnthemRoute
   ClipsRoute: typeof ClipsRoute
   CommunityRoute: typeof CommunityRoute
   ContactRoute: typeof ContactRoute
@@ -126,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClipsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/anthem': {
+      id: '/anthem'
+      path: '/anthem'
+      fullPath: '/anthem'
+      preLoaderRoute: typeof AnthemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -146,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AnthemRoute: AnthemRoute,
   ClipsRoute: ClipsRoute,
   CommunityRoute: CommunityRoute,
   ContactRoute: ContactRoute,
