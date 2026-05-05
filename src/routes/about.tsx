@@ -154,8 +154,11 @@ function AboutPage() {
               Welcome to <span className="text-foreground font-semibold">BunnyZ Gaming</span> 🎮🐰
             </p>
             <p className="text-muted-foreground mb-3">
-              The channel focuses on gameplay, highlights, and gaming content that's fun but full of action.
-              From chill play to clutch moments — it's all right here.
+              The channel is all about gameplay, highlights, and gaming content that's fun but packed with action.
+              From chill casual sessions to clutch ranked moments — it's all right here.
+            </p>
+            <p className="text-muted-foreground mb-3">
+              Expect funny squad runs, high-energy plays, and a creator who's always vibing with the chat.
             </p>
             <p className="text-muted-foreground mb-3">
               Join the <span className="text-foreground font-semibold">BunnyZ Syndicate</span> 🐰⚔️
