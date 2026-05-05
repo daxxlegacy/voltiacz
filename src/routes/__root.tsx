@@ -29,9 +29,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Voltiacz Rising — Gaming Community Led by BunnyZ" },
-      { name: "description", content: "Voltiacz Rising: a gaming brand and community led by YouTube creator BunnyZ. Watch content, join Discord, and rise with us." },
-      { property: "og:title", content: "Voltiacz Rising — Led by BunnyZ" },
+      { title: "Voltiacz Rising — Gaming Community Since 2017" },
+      { name: "description", content: "Voltiacz Rising: a gaming brand and community since 2017. Watch content, join Discord, and rise with us." },
+      { property: "og:title", content: "Voltiacz Rising — Since 2017" },
       { property: "og:description", content: "Content. Community. Gaming. Join the Voltiacz Rising movement." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/community")({
       { title: "Community — Join Voltiacz Rising on Discord" },
       { name: "description", content: "Join the Voltiacz Rising Discord. Play games, jump in voice chats, and be part of the events." },
       { property: "og:title", content: "Join Voltiacz Rising" },
-      { property: "og:description", content: "Discord community for gamers led by BunnyZ." },
+      { property: "og:description", content: "Discord community for gamers — Voltiacz Rising since 2017." },
     ],
   }),
   component: CommunityPage,

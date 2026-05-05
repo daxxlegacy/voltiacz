@@ -8,7 +8,7 @@ export function Footer() {
           <span className="text-gradient">VOLTIACZ</span>{" "}
           <span className="text-foreground">RISING</span>
         </div>
-        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Voltiacz Rising — Led by BunnyZ.</p>
+        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Voltiacz Rising — Since 2017.</p>
         <div className="flex gap-3">
           <a href="https://www.youtube.com/@BunnyZChannel" target="_blank" rel="noreferrer" aria-label="YouTube" className="p-2 rounded-md text-foreground/80 hover:text-primary glow-hover">
             <Youtube className="w-5 h-5" />
