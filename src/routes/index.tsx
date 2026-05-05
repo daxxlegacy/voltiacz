@@ -7,10 +7,10 @@ import { Youtube, MessageCircle, Zap, Users, Trophy } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Voltiacz Rising — Home | Gaming with BunnyZ" },
-      { name: "description", content: "Welcome to Voltiacz Rising. Content, community, and gaming led by BunnyZ. Watch on YouTube and join the Discord." },
+      { title: "Voltiacz Rising — Home | Gaming Since 2017" },
+      { name: "description", content: "Welcome to Voltiacz Rising. Content, community, and gaming since 2017. Watch on YouTube and join the Discord." },
       { property: "og:title", content: "Voltiacz Rising — Home" },
-      { property: "og:description", content: "Content. Community. Gaming. Led by BunnyZ." },
+      { property: "og:description", content: "Content. Community. Gaming. Since 2017." },
     ],
   }),
   component: Index,
@@ -41,7 +41,7 @@ function Index() {
             <span className="text-gradient">Voltiacz Rising</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Content. Community. Gaming. <span className="text-foreground font-semibold">Led by BunnyZ.</span>
+            Content. Community. Gaming. <span className="text-foreground font-semibold">Since 2017.</span>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <NeonLink href="https://www.youtube.com/@BunnyZChannel" external variant="primary">

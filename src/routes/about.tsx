@@ -109,6 +109,24 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Voltiacz Rising anthem */}
+      <section className="max-w-4xl mx-auto px-6 pb-4">
+        <div className="rounded-2xl bg-card neon-border p-6 md:p-8 shadow-neon-sm">
+          <div className="flex items-center gap-4 mb-5">
+            <div className="p-3 rounded-lg bg-gradient-primary text-primary-foreground shadow-neon-sm">
+              <Music className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-primary font-display">Official Anthem</div>
+              <div className="font-display text-lg font-bold">VOLTIACZ RISING ⚡</div>
+            </div>
+          </div>
+          <audio controls preload="metadata" src="/voltiacz-rising-anthem.mp3" className="w-full">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </section>
+
       {/* Creator tabs / anchor jumps */}
       <section className="max-w-5xl mx-auto px-6 pt-16 pb-2 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-primary font-display mb-4">The Crew</p>
