@@ -63,7 +63,7 @@ const BUNNYZ_SOCIALS: SocialLink[] = [
 const XCHURROS_SOCIALS: SocialLink[] = [
   { label: "YouTube", url: "https://www.youtube.com/@zariqfirdaus3392", icon: <Youtube className="w-5 h-5" />, handle: "@zariqfirdaus3392" },
   { label: "Twitch", url: "https://www.twitch.tv/mr_boyzzx", icon: <Twitch className="w-5 h-5" />, handle: "mr_boyzzx" },
-  { label: "TikTok", url: "https://www.tiktok.com/@mr_zomba", icon: <TikTokIcon />, handle: "@Mr_Zomba" },
+  { label: "TikTok", url: "https://www.tiktok.com/@mr_ariq01", icon: <TikTokIcon />, handle: "@mr_ariq01" },
   { label: "Discord", url: "https://discord.gg/EmKrKbC3Nt", icon: <MessageCircle className="w-5 h-5" />, handle: "Voltiacz Rising" },
 ];
 
