@@ -57,14 +57,12 @@ const BUNNYZ_SOCIALS: SocialLink[] = [
   { label: "YouTube", url: "https://www.youtube.com/@BunnyZChannel", icon: <Youtube className="w-5 h-5" />, handle: "@BunnyZChannel" },
   { label: "Twitch", url: "https://twitch.tv/bunnyzgamingmy", icon: <Twitch className="w-5 h-5" />, handle: "bunnyzgamingmy" },
   { label: "TikTok", url: "https://tiktok.com/@bunnyz10", icon: <TikTokIcon />, handle: "@bunnyz10" },
-  { label: "Discord", url: "https://discord.gg/EmKrKbC3Nt", icon: <MessageCircle className="w-5 h-5" />, handle: "Voltiacz Rising" },
 ];
 
 const XCHURROS_SOCIALS: SocialLink[] = [
   { label: "YouTube", url: "https://www.youtube.com/@zariqfirdaus3392", icon: <Youtube className="w-5 h-5" />, handle: "@zariqfirdaus3392" },
   { label: "Twitch", url: "https://www.twitch.tv/mr_boyzzx", icon: <Twitch className="w-5 h-5" />, handle: "mr_boyzzx" },
   { label: "TikTok", url: "https://www.tiktok.com/@mr_ariq01", icon: <TikTokIcon />, handle: "@mr_ariq01" },
-  { label: "Discord", url: "https://discord.gg/EmKrKbC3Nt", icon: <MessageCircle className="w-5 h-5" />, handle: "Voltiacz Rising" },
 ];
 
 function AboutPage() {
