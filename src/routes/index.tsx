@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { PageShell } from "@/components/PageShell";
 import { NeonLink } from "@/components/NeonButton";
 import { VideoCard } from "@/components/VideoCard";
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Voltiacz Rising — Home | Gaming Since 2017" },
-      { name: "description", content: "Welcome to Voltiacz Rising. Content, community, and gaming since 2017. Watch on YouTube and join the Discord." },
+      { name: "description", content: "Welcome to Voltiacz Rising. Content, community, and gaming since 2017. Watch BunnyZ & xChurros on YouTube and join the Discord." },
       { property: "og:title", content: "Voltiacz Rising — Home" },
       { property: "og:description", content: "Content. Community. Gaming. Since 2017." },
     ],
@@ -16,13 +17,22 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const FEATURED = [
+const FEATURED_BUNNYZ = [
   { id: "dQw4w9WgXcQ", title: "Latest Gameplay Highlights", category: "Gameplay" },
   { id: "9bZkp7q19f0", title: "Funniest Moments Compilation", category: "Funny" },
   { id: "kJQP7kiw5Fk", title: "Clutch Plays of the Week", category: "Highlights" },
 ];
 
+const FEATURED_XCHURROS = [
+  { id: "3JZ_D3ELwOQ", title: "xChurros Live Stream Clips", category: "Live" },
+  { id: "L_jWHffIx5E", title: "Funny Stream Moments", category: "Funny" },
+  { id: "fJ9rUzIMcZQ", title: "Best Plays Highlight", category: "Highlights" },
+];
+
 function Index() {
+  const [creator, setCreator] = useState<"bunnyz" | "xchurros">("bunnyz");
+  const featured = creator === "bunnyz" ? FEATURED_BUNNYZ : FEATURED_XCHURROS;
+
   return (
     <PageShell>
       {/* HERO */}
@@ -42,10 +52,15 @@ function Index() {
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
             Content. Community. Gaming. <span className="text-foreground font-semibold">Since 2017.</span>
+            <br />
+            Featuring <span className="text-foreground font-semibold">BunnyZ</span> & <span className="text-foreground font-semibold">xChurros</span>.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
             <NeonLink href="https://www.youtube.com/@BunnyZChannel" external variant="primary">
-              <Youtube className="w-4 h-4" /> Watch on YouTube
+              <Youtube className="w-4 h-4" /> Watch BunnyZ
+            </NeonLink>
+            <NeonLink href="https://www.youtube.com/@zariqfirdaus3392" external variant="primary">
+              <Youtube className="w-4 h-4" /> Watch xChurros
             </NeonLink>
             <NeonLink href="https://discord.gg/EmKrKbC3Nt" external variant="outline">
               <MessageCircle className="w-4 h-4" /> Join the Community
@@ -73,14 +88,37 @@ function Index() {
 
       {/* FEATURED VIDEOS */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="font-display text-3xl md:text-5xl font-black mb-3">
             Featured <span className="text-gradient">Drops</span>
           </h2>
-          <p className="text-muted-foreground">The latest from BunnyZ & xChurros — straight from YouTube.</p>
+          <p className="text-muted-foreground">Pick your creator — straight from YouTube.</p>
         </div>
+
+        {/* Creator tabs */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex bg-card neon-border rounded-full p-1">
+            {([
+              { id: "bunnyz", label: "BunnyZ" },
+              { id: "xchurros", label: "xChurros" },
+            ] as const).map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setCreator(t.id)}
+                className={`px-6 py-2 rounded-full text-sm font-display font-bold uppercase tracking-wider transition-all ${
+                  creator === t.id
+                    ? "bg-gradient-primary text-primary-foreground shadow-neon-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {FEATURED.map((v) => (
+          {featured.map((v) => (
             <VideoCard key={v.id} videoId={v.id} title={v.title} category={v.category} />
           ))}
         </div>
