@@ -5,14 +5,15 @@ import { Youtube, MessageCircle, Twitch, Music } from "lucide-react";
 import { useState } from "react";
 import bunnyzLogo from "@/assets/bunnyz-logo.png";
 import voltiaczLogo from "@/assets/voltiacz-logo.png";
+import xchurrosLogo from "@/assets/xchurros-logo.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Voltiacz Rising | BunnyZ & Mr_Zomba" },
-      { name: "description", content: "Meet the creators of Voltiacz Rising — BunnyZ and Mr_Zomba — and the story behind the gaming brand." },
+      { title: "About — Voltiacz Rising | BunnyZ & xChurros" },
+      { name: "description", content: "Meet the creators of Voltiacz Rising — BunnyZ and xChurros — and the story behind the gaming brand." },
       { property: "og:title", content: "About Voltiacz Rising" },
-      { property: "og:description", content: "Meet BunnyZ and Mr_Zomba — the creators behind Voltiacz Rising." },
+      { property: "og:description", content: "Meet BunnyZ and xChurros — the creators behind Voltiacz Rising." },
     ],
   }),
   component: AboutPage,
@@ -59,14 +60,17 @@ const BUNNYZ_SOCIALS: SocialLink[] = [
   { label: "Discord", url: "https://discord.gg/EmKrKbC3Nt", icon: <MessageCircle className="w-5 h-5" />, handle: "Voltiacz Rising" },
 ];
 
-const ZOMBA_SOCIALS: SocialLink[] = [
+const XCHURROS_SOCIALS: SocialLink[] = [
+  { label: "YouTube", url: "https://www.youtube.com/@zariqfirdaus3392", icon: <Youtube className="w-5 h-5" />, handle: "@zariqfirdaus3392" },
+  { label: "Twitch", url: "https://www.twitch.tv/mr_boyzzx", icon: <Twitch className="w-5 h-5" />, handle: "mr_boyzzx" },
+  { label: "TikTok", url: "https://www.tiktok.com/@mr_zomba", icon: <TikTokIcon />, handle: "@Mr_Zomba" },
   { label: "Discord", url: "https://discord.gg/EmKrKbC3Nt", icon: <MessageCircle className="w-5 h-5" />, handle: "Voltiacz Rising" },
 ];
 
 function AboutPage() {
-  const [tab, setTab] = useState<"bunnyz" | "zomba">("bunnyz");
+  const [tab, setTab] = useState<"bunnyz" | "xchurros">("bunnyz");
 
-  const scrollTo = (id: "bunnyz" | "zomba") => {
+  const scrollTo = (id: "bunnyz" | "xchurros") => {
     setTab(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -136,7 +140,7 @@ function AboutPage() {
         <div className="inline-flex gap-2 p-1.5 rounded-full bg-card neon-border">
           {([
             { id: "bunnyz", label: "BunnyZ" },
-            { id: "zomba", label: "Mr_Zomba" },
+            { id: "xchurros", label: "xChurros" },
           ] as const).map((t) => (
             <button
               key={t.id}
@@ -208,19 +212,23 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Mr_Zomba */}
-      <section id="zomba" className="max-w-6xl mx-auto px-6 py-16 scroll-mt-24">
+      {/* xChurros */}
+      <section id="xchurros" className="max-w-6xl mx-auto px-6 py-16 scroll-mt-24">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="md:order-2 aspect-square rounded-2xl bg-gradient-to-br from-secondary to-accent neon-border flex items-center justify-center font-display text-8xl font-black text-primary-foreground shadow-neon">
-            MZ
+          <div className="md:order-2 aspect-square rounded-2xl bg-card neon-border p-4 flex items-center justify-center shadow-neon overflow-hidden">
+            <img
+              src={xchurrosLogo}
+              alt="xChurros Gaming logo"
+              className="w-full h-full object-contain drop-shadow-[0_0_30px_oklch(0.7_0.22_140/0.4)]"
+            />
           </div>
           <div className="md:order-1">
             <p className="text-xs uppercase tracking-widest text-primary font-display mb-2">Creator</p>
             <h3 className="font-display text-3xl md:text-4xl font-black mb-4">
-              <span className="text-gradient">Mr_Zomba</span> 🧟
+              <span className="text-gradient">xChurros</span> 💀🌹
             </h3>
             <p className="text-muted-foreground mb-3">
-              Another voice of the Voltiacz Rising crew. Mr_Zomba brings his own style of gameplay,
+              Another voice of the Voltiacz Rising crew. xChurros brings his own style of gameplay,
               energy, and chaos to the channel — a different vibe, same family.
             </p>
             <p className="text-muted-foreground">
@@ -229,8 +237,24 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {ZOMBA_SOCIALS.map((s) => <SocialCard key={s.label} link={s} />)}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {XCHURROS_SOCIALS.map((s) => <SocialCard key={s.label} link={s} />)}
+        </div>
+
+        {/* xChurros anthem */}
+        <div className="mt-8 rounded-2xl bg-card neon-border p-6 md:p-8 shadow-neon-sm">
+          <div className="flex items-center gap-4 mb-5">
+            <div className="p-3 rounded-lg bg-gradient-primary text-primary-foreground shadow-neon-sm">
+              <Music className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-primary font-display">xChurros Anthem</div>
+              <div className="font-display text-lg font-bold">xCHURROS 💀🌹</div>
+            </div>
+          </div>
+          <audio controls preload="metadata" src="/xchurros-anthem.mp3" className="w-full">
+            Your browser does not support the audio element.
+          </audio>
         </div>
       </section>
 
