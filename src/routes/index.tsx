@@ -89,10 +89,10 @@ function Index() {
       {/* INTRO */}
       <section className="max-w-5xl mx-auto px-6 py-16 text-center">
         <h2 className="font-display text-3xl md:text-4xl font-black mb-4">
-          Meet <span className="text-gradient">BunnyZ</span>
+          Meet <span className="text-gradient">BunnyZ</span> & <span className="text-gradient">xChurros</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
-          A gaming creator focused on entertaining content, funny moments, and real community interaction.
+          Two creators, one rising crew. Entertaining gameplay, funny moments, and real community interaction.
           Not just videos — a movement.
         </p>
         <NeonLink href="/about" variant="outline">Read the Story</NeonLink>
