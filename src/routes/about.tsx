@@ -235,8 +235,8 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {XCHURROS_SOCIALS.map((s) => <SocialCard key={s.label} link={s} />)}
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {XCHURROS_SOCIALS.map((s) => <div key={s.label} className="w-full sm:w-64"><SocialCard link={s} /></div>)}
         </div>
 
         {/* xChurros anthem */}
