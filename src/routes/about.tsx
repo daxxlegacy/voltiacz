@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { NeonLink } from "@/components/NeonButton";
-import { Youtube, MessageCircle, Twitch } from "lucide-react";
+import { Youtube, MessageCircle, Twitch, Music } from "lucide-react";
 import { useState } from "react";
 import bunnyzLogo from "@/assets/bunnyz-logo.png";
 import voltiaczLogo from "@/assets/voltiacz-logo.png";
@@ -171,6 +171,22 @@ function AboutPage() {
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {BUNNYZ_SOCIALS.map((s) => <SocialCard key={s.label} link={s} />)}
+        </div>
+
+        {/* BunnyZ anthem */}
+        <div className="mt-8 rounded-2xl bg-card neon-border p-6 md:p-8 shadow-neon-sm">
+          <div className="flex items-center gap-4 mb-5">
+            <div className="p-3 rounded-lg bg-gradient-primary text-primary-foreground shadow-neon-sm">
+              <Music className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-primary font-display">BunnyZ Anthem</div>
+              <div className="font-display text-lg font-bold">BUNNYZ 🐰⚔️</div>
+            </div>
+          </div>
+          <audio controls preload="metadata" src="/bunnyz-anthem.mp3" className="w-full">
+            Your browser does not support the audio element.
+          </audio>
         </div>
       </section>
 
