@@ -6,16 +6,16 @@ import { useState } from "react";
 export const Route = createFileRoute("/content")({
   head: () => ({
     meta: [
-      { title: "Content — Voltiacz Rising | BunnyZ Videos" },
-      { name: "description", content: "Browse BunnyZ's gameplay, funny moments, and highlight clips. New uploads dropping all the time." },
+      { title: "Content — Voltiacz Rising | BunnyZ & xChurros Videos" },
+      { name: "description", content: "Browse BunnyZ and xChurros gameplay, funny moments, and highlight clips. New uploads dropping all the time." },
       { property: "og:title", content: "Content — Voltiacz Rising" },
-      { property: "og:description", content: "Gameplay, funny moments, and highlight clips from BunnyZ." },
+      { property: "og:description", content: "Gameplay, funny moments, and highlight clips from BunnyZ and xChurros." },
     ],
   }),
   component: ContentPage,
 });
 
-const VIDEOS = [
+const VIDEOS_BUNNYZ = [
   { id: "dQw4w9WgXcQ", title: "Ranked Grind — Road to Top", category: "Gameplay" },
   { id: "kJQP7kiw5Fk", title: "Squad Wipe Wins", category: "Gameplay" },
   { id: "L_jWHffIx5E", title: "Bro What Just Happened", category: "Funny" },
@@ -24,12 +24,24 @@ const VIDEOS = [
   { id: "OPf0YbXqDm0", title: "Best Plays — November", category: "Highlights" },
 ] as const;
 
+const VIDEOS_XCHURROS = [
+  { id: "3JZ_D3ELwOQ", title: "xChurros Ranked Run", category: "Gameplay" },
+  { id: "RgKAFK5djSk", title: "Churros Squad Domination", category: "Gameplay" },
+  { id: "JGwWNGJdvx8", title: "Churros Loses It", category: "Funny" },
+  { id: "OPf0YbXqDm0", title: "Stream Bloopers", category: "Funny" },
+  { id: "L_jWHffIx5E", title: "Insane Clutch Moment", category: "Highlights" },
+  { id: "fJ9rUzIMcZQ", title: "xChurros Top Plays", category: "Highlights" },
+] as const;
+
 const CATS = ["All", "Gameplay", "Funny", "Highlights"] as const;
 type Cat = typeof CATS[number];
+type Creator = "bunnyz" | "xchurros";
 
 function ContentPage() {
+  const [creator, setCreator] = useState<Creator>("bunnyz");
   const [cat, setCat] = useState<Cat>("All");
-  const filtered = cat === "All" ? VIDEOS : VIDEOS.filter((v) => v.category === cat);
+  const source = creator === "bunnyz" ? VIDEOS_BUNNYZ : VIDEOS_XCHURROS;
+  const filtered = cat === "All" ? source : source.filter((v) => v.category === cat);
 
   return (
     <PageShell>
@@ -39,11 +51,27 @@ function ContentPage() {
           The <span className="text-gradient">Content</span> Vault
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Every drop from BunnyZ — handpicked into the categories you love.
+          Every drop from BunnyZ & xChurros — handpicked into the categories you love.
         </p>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
+          {(["bunnyz", "xchurros"] as const).map((c) => (
+            <button
+              key={c}
+              onClick={() => setCreator(c)}
+              className={`px-6 py-2 rounded-full text-sm font-display uppercase tracking-wider transition-all ${
+                creator === c
+                  ? "bg-gradient-primary text-primary-foreground shadow-neon-sm"
+                  : "border border-border text-muted-foreground hover:text-primary hover:border-primary/60"
+              }`}
+            >
+              {c === "bunnyz" ? "BunnyZ" : "xChurros"}
+            </button>
+          ))}
+        </div>
+
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {CATS.map((c) => (
             <button
