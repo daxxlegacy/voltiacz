@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Youtube, MessageCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
+import voltiaczLogo from "@/assets/voltiacz-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -17,9 +18,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link to="/" className="font-display text-xl font-bold tracking-wider">
-          <span className="text-gradient">VOLTIACZ</span>
-          <span className="text-foreground"> RISING</span>
+        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold tracking-wider">
+          <img src={voltiaczLogo} alt="Voltiacz Rising logo" className="h-10 w-10 object-contain drop-shadow-[0_0_8px_oklch(0.7_0.22_250/0.6)]" />
+          <span>
+            <span className="text-gradient">VOLTIACZ</span>
+            <span className="text-foreground"> RISING</span>
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
