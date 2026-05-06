@@ -37,15 +37,12 @@ function ContactPage() {
             <div>
               <p className="text-xs uppercase tracking-widest text-muted-foreground font-display mb-1">Collabs, Sponsorships & Services</p>
               <p className="text-muted-foreground">
-                Interested in our website builds, graphic design, or want to collab? Reach out via Discord or YouTube below — we'll get back fast.
+                Interested in our website builds, graphic design, or want to collab? Reach out via Discord below — we'll get back fast.
               </p>
             </div>
           </div>
 
           <div className="border-t border-border pt-6 flex flex-wrap gap-3">
-            <NeonLink href="https://www.youtube.com/@BunnyZChannel" external variant="outline">
-              <Youtube className="w-4 h-4" /> YouTube
-            </NeonLink>
             <NeonLink href="https://discord.gg/EmKrKbC3Nt" external variant="outline">
               <MessageCircle className="w-4 h-4" /> Discord
             </NeonLink>
