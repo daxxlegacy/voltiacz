@@ -119,13 +119,24 @@ function AboutPage() {
               <Music className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-widest text-primary font-display">Official Anthem</div>
+              <div className="text-xs uppercase tracking-widest text-primary font-display">Official Anthems</div>
               <div className="font-display text-lg font-bold">VOLTIACZ RISING ⚡</div>
             </div>
           </div>
-          <audio controls preload="metadata" src="/voltiacz-rising-anthem.mp3" className="w-full">
-            Your browser does not support the audio element.
-          </audio>
+          <div className="space-y-4">
+            <div>
+              <div className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-2">Anthem I</div>
+              <audio controls preload="metadata" src="/voltiacz-rising-anthem-1.mp3" className="w-full">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div>
+              <div className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-2">Anthem II</div>
+              <audio controls preload="metadata" src="/voltiacz-rising-anthem-2.mp3" className="w-full">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
         </div>
       </section>
 
