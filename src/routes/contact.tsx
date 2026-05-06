@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { NeonLink } from "@/components/NeonButton";
-import { Mail, Youtube, MessageCircle, Handshake } from "lucide-react";
+import { Youtube, MessageCircle, Handshake } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -32,25 +32,12 @@ function ContactPage() {
         <div className="bg-card neon-border rounded-2xl p-8 md:p-10 shadow-neon-sm">
           <div className="flex items-start gap-4 mb-8">
             <div className="p-3 rounded-lg bg-primary/10 text-primary">
-              <Mail className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground font-display">Business Email</p>
-              <a href="mailto:business@voltiaczrising.com" className="text-xl font-display font-bold text-foreground hover:text-primary transition-colors">
-                business@voltiaczrising.com
-              </a>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4 mb-8">
-            <div className="p-3 rounded-lg bg-primary/10 text-primary">
               <Handshake className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground font-display mb-1">Collabs & Sponsorships</p>
+              <p className="text-xs uppercase tracking-widest text-muted-foreground font-display mb-1">Collabs, Sponsorships & Services</p>
               <p className="text-muted-foreground">
-                Open to game partnerships, brand deals, and creator collabs that match the Voltiacz Rising vibe.
-                Send a brief, deliverables, and timeline — we'll get back fast.
+                Interested in our website builds, graphic design, or want to collab? Reach out via Discord or YouTube below — we'll get back fast.
               </p>
             </div>
           </div>
