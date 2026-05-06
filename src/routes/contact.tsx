@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import { NeonLink } from "@/components/NeonButton";
-import { Mail, Youtube, MessageCircle, Handshake } from "lucide-react";
+import { Youtube, MessageCircle, Handshake } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
