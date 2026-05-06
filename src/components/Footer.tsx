@@ -1,4 +1,4 @@
-import { Youtube, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,9 +10,6 @@ export function Footer() {
         </div>
         <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Voltiacz Rising — Since 2017.</p>
         <div className="flex gap-3">
-          <a href="https://www.youtube.com/@BunnyZChannel" target="_blank" rel="noreferrer" aria-label="YouTube" className="p-2 rounded-md text-foreground/80 hover:text-primary glow-hover">
-            <Youtube className="w-5 h-5" />
-          </a>
           <a href="https://discord.gg/EmKrKbC3Nt" target="_blank" rel="noreferrer" aria-label="Discord" className="p-2 rounded-md text-foreground/80 hover:text-primary glow-hover">
             <MessageCircle className="w-5 h-5" />
           </a>
