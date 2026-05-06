@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Youtube, MessageCircle, Menu, X } from "lucide-react";
+import { MessageCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
 import voltiaczLogo from "@/assets/voltiacz-logo.png";
 
@@ -43,15 +43,6 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-2">
           <a
-            href="https://www.youtube.com/@BunnyZChannel"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="YouTube"
-            className="p-2 rounded-md text-foreground/80 hover:text-primary glow-hover"
-          >
-            <Youtube className="w-5 h-5" />
-          </a>
-          <a
             href="https://discord.gg/EmKrKbC3Nt"
             target="_blank"
             rel="noreferrer"
@@ -86,7 +77,6 @@ export function Navbar() {
             </Link>
           ))}
           <div className="flex gap-3 pt-3">
-            <a href="https://www.youtube.com/@BunnyZChannel" target="_blank" rel="noreferrer" className="p-2 text-foreground/80"><Youtube className="w-5 h-5" /></a>
             <a href="https://discord.gg/EmKrKbC3Nt" target="_blank" rel="noreferrer" className="p-2 text-foreground/80"><MessageCircle className="w-5 h-5" /></a>
           </div>
         </div>
