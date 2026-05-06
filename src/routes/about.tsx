@@ -11,7 +11,10 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Voltiacz Rising | BunnyZ & xChurros" },
-      { name: "description", content: "Meet the creators of Voltiacz Rising — BunnyZ and xChurros — and the story behind the gaming brand." },
+      {
+        name: "description",
+        content: "Meet the creators of Voltiacz Rising — BunnyZ and xChurros — and the story behind the gaming brand.",
+      },
       { property: "og:title", content: "About Voltiacz Rising" },
       { property: "og:description", content: "Meet BunnyZ and xChurros — the creators behind Voltiacz Rising." },
     ],
@@ -54,14 +57,34 @@ function SocialCard({ link }: { link: SocialLink }) {
 }
 
 const BUNNYZ_SOCIALS: SocialLink[] = [
-  { label: "YouTube", url: "https://www.youtube.com/@BunnyZChannel", icon: <Youtube className="w-5 h-5" />, handle: "@BunnyZChannel" },
-  { label: "Twitch", url: "https://twitch.tv/bunnyzgamingmy", icon: <Twitch className="w-5 h-5" />, handle: "bunnyzgamingmy" },
+  {
+    label: "YouTube",
+    url: "https://www.youtube.com/@BunnyZChannel",
+    icon: <Youtube className="w-5 h-5" />,
+    handle: "@BunnyZChannel",
+  },
+  {
+    label: "Twitch",
+    url: "https://twitch.tv/bunnyzgamingmy",
+    icon: <Twitch className="w-5 h-5" />,
+    handle: "bunnyzgamingmy",
+  },
   { label: "TikTok", url: "https://tiktok.com/@bunnyz10", icon: <TikTokIcon />, handle: "@bunnyz10" },
 ];
 
 const XCHURROS_SOCIALS: SocialLink[] = [
-  { label: "YouTube", url: "https://www.youtube.com/@zariqfirdaus3392", icon: <Youtube className="w-5 h-5" />, handle: "@zariqfirdaus3392" },
-  { label: "Twitch", url: "https://www.twitch.tv/mr_boyzzx", icon: <Twitch className="w-5 h-5" />, handle: "mr_boyzzx" },
+  {
+    label: "YouTube",
+    url: "https://www.youtube.com/@xChurros112",
+    icon: <Youtube className="w-5 h-5" />,
+    handle: "@xChurros112",
+  },
+  {
+    label: "Twitch",
+    url: "https://www.twitch.tv/mr_boyzzx",
+    icon: <Twitch className="w-5 h-5" />,
+    handle: "mr_boyzzx",
+  },
   { label: "TikTok", url: "https://www.tiktok.com/@mr_ariq01", icon: <TikTokIcon />, handle: "@mr_ariq01" },
 ];
 
@@ -89,7 +112,11 @@ function AboutPage() {
       {/* What is Voltiacz Rising */}
       <section className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
         <div className="aspect-square rounded-2xl bg-card neon-border p-8 flex items-center justify-center shadow-neon">
-          <img src={voltiaczLogo} alt="Voltiacz Rising logo" className="w-full h-full object-contain drop-shadow-[0_0_30px_oklch(0.7_0.22_250/0.5)]" />
+          <img
+            src={voltiaczLogo}
+            alt="Voltiacz Rising logo"
+            className="w-full h-full object-contain drop-shadow-[0_0_30px_oklch(0.7_0.22_250/0.5)]"
+          />
         </div>
         <div>
           <h2 className="font-display text-3xl md:text-4xl font-black mb-4">
@@ -100,8 +127,8 @@ function AboutPage() {
             We're not chasing numbers — we're building something real.
           </p>
           <p className="text-muted-foreground">
-            Under the Voltiacz Rising banner, multiple creators bring their own flavor to the channel —
-            and the family keeps growing.
+            Under the Voltiacz Rising banner, multiple creators bring their own flavor to the channel — and the family
+            keeps growing.
           </p>
           <div className="mt-6">
             <NeonLink href="https://discord.gg/EmKrKbC3Nt" external variant="outline">
@@ -147,10 +174,12 @@ function AboutPage() {
           Meet the <span className="text-gradient">Creators</span>
         </h2>
         <div className="inline-flex gap-2 p-1.5 rounded-full bg-card neon-border">
-          {([
-            { id: "bunnyz", label: "BunnyZ" },
-            { id: "xchurros", label: "xChurros" },
-          ] as const).map((t) => (
+          {(
+            [
+              { id: "bunnyz", label: "BunnyZ" },
+              { id: "xchurros", label: "xChurros" },
+            ] as const
+          ).map((t) => (
             <button
               key={t.id}
               onClick={() => scrollTo(t.id)}
@@ -185,8 +214,8 @@ function AboutPage() {
               Welcome to <span className="text-foreground font-semibold">BunnyZ Gaming</span> 🎮🐰
             </p>
             <p className="text-muted-foreground mb-3">
-              The channel is all about gameplay, highlights, and gaming content that's fun but packed with action.
-              From chill casual sessions to clutch ranked moments — it's all right here.
+              The channel is all about gameplay, highlights, and gaming content that's fun but packed with action. From
+              chill casual sessions to clutch ranked moments — it's all right here.
             </p>
             <p className="text-muted-foreground mb-3">
               Expect funny squad runs, high-energy plays, and a creator who's always vibing with the chat.
@@ -194,14 +223,16 @@ function AboutPage() {
             <p className="text-muted-foreground mb-3">
               Join the <span className="text-foreground font-semibold">BunnyZ Syndicate</span> 🐰⚔️
             </p>
-            <p className="text-muted-foreground">
-              Subscribe and become part of the BunnyZ Gaming journey 🚀
-            </p>
+            <p className="text-muted-foreground">Subscribe and become part of the BunnyZ Gaming journey 🚀</p>
           </div>
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {BUNNYZ_SOCIALS.map((s) => <div key={s.label} className="w-full sm:w-64"><SocialCard link={s} /></div>)}
+          {BUNNYZ_SOCIALS.map((s) => (
+            <div key={s.label} className="w-full sm:w-64">
+              <SocialCard link={s} />
+            </div>
+          ))}
         </div>
 
         {/* BunnyZ anthem */}
@@ -237,8 +268,8 @@ function AboutPage() {
               <span className="text-gradient">xChurros</span> 💀🌹
             </h3>
             <p className="text-muted-foreground mb-3">
-              Another voice of the Voltiacz Rising crew. xChurros brings his own style of gameplay,
-              energy, and chaos to the channel — a different vibe, same family.
+              Another voice of the Voltiacz Rising crew. xChurros brings his own style of gameplay, energy, and chaos to
+              the channel — a different vibe, same family.
             </p>
             <p className="text-muted-foreground">
               Stay tuned for more drops, collabs, and squad sessions across the Voltiacz Rising universe.
@@ -247,7 +278,11 @@ function AboutPage() {
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {XCHURROS_SOCIALS.map((s) => <div key={s.label} className="w-full sm:w-64"><SocialCard link={s} /></div>)}
+          {XCHURROS_SOCIALS.map((s) => (
+            <div key={s.label} className="w-full sm:w-64">
+              <SocialCard link={s} />
+            </div>
+          ))}
         </div>
 
         {/* xChurros anthem */}
