@@ -6,9 +6,9 @@ import voltiaczLogo from "@/assets/voltiacz-logo.png";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/content", label: "Content" },
+  // { to: "/content", label: "Content" }, // hidden temporarily
   { to: "/community", label: "Community" },
-  { to: "/clips", label: "Clips" },
+  // { to: "/clips", label: "Clips" }, // hidden temporarily
   { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
 ] as const;
