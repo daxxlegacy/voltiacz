@@ -18,15 +18,13 @@ export const Route = createFileRoute("/")({
 });
 
 const FEATURED_BUNNYZ = [
-  { id: "dQw4w9WgXcQ", title: "Latest Gameplay Highlights", category: "Gameplay" },
-  { id: "9bZkp7q19f0", title: "Funniest Moments Compilation", category: "Funny" },
-  { id: "kJQP7kiw5Fk", title: "Clutch Plays of the Week", category: "Highlights" },
+  { id: "jRMhTuaI_Dc", title: "Level 1 Backrooms — Sesuatu Dalam Kegelapan Menunggu", category: "Gameplay" },
+  { id: "AyeqhOBX4b4", title: "Level 0 Backrooms — Tempat Yang Tak Sepatutnya Wujud", category: "Gameplay" },
+  { id: "Rd4NlvzDJjk", title: "VOLTIACZ RISING ⚡ | Gaming Motivation Song 2026", category: "Music" },
 ];
 
 const FEATURED_XCHURROS = [
-  { id: "3JZ_D3ELwOQ", title: "xChurros Live Stream Clips", category: "Live" },
-  { id: "L_jWHffIx5E", title: "Funny Stream Moments", category: "Funny" },
-  { id: "fJ9rUzIMcZQ", title: "Best Plays Highlight", category: "Highlights" },
+  { id: "SU0HsFcYzxs", title: "ADE 551 Tabletop Game Design — Pathfinder Adventure", category: "Gaming" },
 ];
 
 function Index() {
